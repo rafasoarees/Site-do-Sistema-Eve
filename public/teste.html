@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <input id="data" type='date'>
+    <button id="enviar" type="submit">ENVIAR</button>
+
+
+<script src="js/jquery.js"></script>
+<script>   
+    $('#enviar').click(()=>{
+        var data = $('#data').val();
+        var dataNova = new Date(data);
+
+        console.log((dataNova.getDate()+ 1) + "-" + (dataNova.getMonth() + 1) + "-" + dataNova.getUTCFullYear());
+
+
+
+    })
+</script>    
+</body>
+</html>
+

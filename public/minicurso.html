@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Listar Evento</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="assets/css/heroic-features.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="usuario.html">Usuario</a>
+                    </li>
+                    <li>
+                        <a href="cadastrarevento.html">Cadastrar Evento</a>
+                    </li>
+                    <li>
+                        <a href="listarevento.html">Listar Evento</a>
+                    </li>
+                    <li>
+                        <a href="palestra.html">Palestras</a>
+                    </li>
+                    <li>
+                        <a href="minicurso.html">Minicursos</a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="deslogar();">Deslogar</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navba
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <!DOCTYPE html>
+    <html lang="pt-br">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Listar Evento</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="assets/css/heroic-features.css" rel="stylesheet">
+        <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/comum.js"></script>
+
+    </head>
+
+    <body>
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="usuario.html">Usuario</a>
+                        </li>
+                        <li>
+                            <a href="cadastrarevento.html">Cadastrar Evento</a>
+                        </li>
+                        <li>
+                            <a href="listarevento.html">Listar Evento</a>
+                        </li>
+                        <li>
+                            <a href="palestra.html">Palestras</a>
+                        </li>
+                        <li>
+                            <a href="minicurso.html">Minicursos</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="deslogar();">Deslogar</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navba
+            <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+
+        <!-- Page Content -->
+        <form role="form">
+            <fieldset>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1> Minicurso </h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-lg-12">
+                            <label for="nome">Nome:</label>
+                            <input id="nomeM" type="text" class="form-control" placeholder="Nome do Curso a ser Ministrado">
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <label for="data">Periodo Inicio:</label>
+                            <input id="periodoMI" type="date" class="form-control">
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <label for="data">Periodo Fim:</label>
+                            <input id="periodoMF" type="date" class="form-control">
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <label for="titulo">Hora Inicio:</label>
+                            <input id="horaMI" type="time" class="form-control" maxlength="8" placeholder="Hora" pattern="[0-9]{2}:[0-9]{2} [0-9]{2}$" />
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <label for="titulo">Hora Fim:</label>
+                            <input id="horaMF" type="time" class="form-control" maxlength="8" placeholder="Hora" pattern="[0-9]{2}:[0-9]{2} [0-9]{2}$" />
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <label for="nome">Instrutor:</label>
+                            <input id="instrutorM" type="text" class="form-control" placeholder="Nome do Instrutor">
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <label for="nome">Local:</label>
+                            <input id="localM" type="text" class="form-control" placeholder="Local do Evento">
+                        </div>
+
+                        <div class="form-group col-lg-12">
+                            <button type="button" id="button" class="btn btn-success">Cadastrar</button>
+                            <button type="button" class="btn btn-warning" onclick="history.go(-1)">Voltar</button>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+
+        </div>
+        <!-- /.container -->
+
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+
+    </html>
+
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.js"></script>
+
+    <!-- // <script src="jquery.coverflow.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/comum.js"></script>
+    <script src="js/cadastrarminicurso.js"></script>
+</body>
+
+</html>

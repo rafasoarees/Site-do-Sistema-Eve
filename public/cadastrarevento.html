@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Cadastrar Evento</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="assets/css/heroic-features.css" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/comum.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="usuario.html">Usuario</a>
+                    </li>
+                    <li>
+                        <a href="cadastrarevento.html">Cadastrar Evento</a>
+                    </li>
+                    <li>
+                        <a href="listarevento.html">Listar Evento</a>
+                    </li>
+                    <li>
+                        <a href="palestra.html">Palestras</a>
+                    </li>
+                    <li>
+                        <a href="minicurso.html">Minicursos</a>
+                    </li>
+                      <li>
+                        <a href="#" onclick="deslogar();">Deslogar</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navba
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <form role="form" action="" method="POST">
+        <fieldset>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1> Eventos </h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-lg-6">
+                        <label for="nome">Nome do Evento:</label>
+                        <input id="Image_Title" type="text" class="form-control" name="nome" placeholder="Nome do Evento">
+                    </div>
+                    <div class="form-group col-lg-3">
+                        <label for="data">Data Inicio</label>
+                        <input id="dataInicio" type="date" class="form-control">
+                        
+                    </div>
+                    <div class="form-group col-lg-3">
+                        <label for="data">Data Fim</label>
+                        <input id="dataFim" type="date" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1> Local do Evento
+                            <h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-lg-12">
+                        <label for="endereco">Endereço do Evento:</label>
+                        <input id="end" type="text" class="form-control" name="endereco" placeholder="Endereço do Evento">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-lg-4">
+                        <label for="estado">Estado:</label>
+                        <input id="estado" type="text" class="form-control" name="estado" placeholder="Estado">
+                    </div>
+                    <div class="form-group col-lg-8">
+                        <label for="cidade">Cidade:</label>
+                        <input id="cidade" type="text" class="form-control" name="cidade" placeholder="Cidade">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-lg-6">
+                        <label for="selecione o curso">Selecione o Curso:</label>
+                        <select name="curso" name="curso" class="form-control">
+                    <option value="">Selecione o Curso</option>
+                    <option value="adm"/>Administração <br /></option> 
+                    <option value="ccp"/>Ciência da Computação <br /> </option>
+                    <option value="dg"/>Design <br />
+                    <option value="eas"/>Engenharia Ambiental e Sanitária <br /> </option>
+                    <option value="eb"/>Engenharia de Bioprocessos <br /> </option>
+                    <option value="ecc"/>Engenharia de Computação <br /></option>
+                    <option value="ec"/>Engenharia Civil <br /> </option>
+                    <option value="ee"/>Engenharia Elétrica <br /> </option>
+                    <option value="ep"/>Engenharia de Produção <br /> </option>
+                    <option value="em"/>Engenharia Mecânica <br /> </option>
+                    <option value="es"/>Engenharia de Software <br /> </option>
+                    <option value="et"/>Engenharia de Telecomunicação <br /></option>
+                    <option value="ssi"/>Sistema de Informação <br /> </option>
+                    <option value="tdp"/>Tecnologia em Design de Produtos <br /> </option>
+                    <option value="tmi"/>Tecnologia em Mídias Interativas </option>
+                </select>
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label for="telefone">Telefone:</label>
+                        <input id="telefone" type="text" class="form-control .phone-ddd-mask" name="telefone" placeholder="Ex.: (00) 0000-0000">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-lg-3">
+                        <label for="site">Site</label>
+                        <input id="site" type="text" class="form-control" name="site" placeholder="Site">
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label for="email">Email:</label>
+                        <input id="email" type="email" class="form-control" name="email" placeholder="Email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+
+                    </div>
+                    <label class="upload-group col-lg-3">
+                        <label for="imagem">Imagem</label>
+                        <input type="file" id="file" class="upload-group" accpet="image/*"/>
+                    </label>
+                    
+                    <div class="form-group col-lg-12">
+                        <label for="sobre o evento">Conte-nos Sobre o Evento</label>
+                        <textarea id="Image_Description" class="form-control" rows="4" required></textarea>
+                    </div>
+                </div>
+                <div class="box-actions">
+                    <button id="cadastrar" type="button" class="btn btn-primary">Cadastrar</button>
+                    <button type="reset" class="btn btn-danger">Limpar</button>
+                </div>
+
+        </fieldset>
+    </form>
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.js"></script>
+
+    <!-- Script do APP -->
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/comum.js"></script>
+    <script src="js/date.js"></script>
+    <script src="js/cadastrarevento.js"></script>
+    <script type="text/javascript">
+
+    </script>
+
+</body>
+
+</html>
